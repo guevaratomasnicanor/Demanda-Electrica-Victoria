@@ -14,6 +14,7 @@ De todas maneras, la demanda promedio mensual suele ser mas alta en invierno.
 
 
 <img width="626" height="345" alt="Captura de pantalla 2025-12-16 155607" src="https://github.com/user-attachments/assets/8ed491ba-64a0-4533-a220-07cd639a6922" />
+
 Los picos mas altos del precio se ven en verano e invierno. Pueden darse precios negativos en dias de sol, viento y poca demanda.
 
 <img width="631" height="359" alt="Captura de pantalla 2025-12-16 161344" src="https://github.com/user-attachments/assets/3c332600-a388-4d16-9c16-3f621674b38c" />
