@@ -11,6 +11,8 @@ De todas maneras, la demanda promedio mensual suele ser mas alta en invierno.
 
 
 # Análisis del precio
+
+
 <img width="626" height="345" alt="Captura de pantalla 2025-12-16 155607" src="https://github.com/user-attachments/assets/8ed491ba-64a0-4533-a220-07cd639a6922" />
 Los picos mas altos del precio se ven en verano e invierno. Pueden darse precios negativos en dias de sol, viento y poca demanda.
 
@@ -22,5 +24,7 @@ El precio promedio tiene una estabilidad relativa con algunos shocks: El mas fue
 
 Los picos de precio suelen darse a la mañana(invierno) y de 16 a 19(verano).
 
-
-La correlación entre demanda-precio es del 59%.
+Key Insights:
+- La correlación entre demanda-precio es del 59%.
+- La demanda tiene una disminución anual del 0,83% mientras que el precio decae un 4,29% anual.
+- 
