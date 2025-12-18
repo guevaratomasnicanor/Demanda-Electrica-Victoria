@@ -25,6 +25,14 @@ El precio promedio tiene una estabilidad relativa con algunos shocks: El mas fue
 
 Los picos de precio suelen darse a la mañana(invierno) y de 16 a 19(verano).
 
+
+# Pronóstico de demanda y precio: 
+<img width="630" height="360" alt="Captura de pantalla 2025-12-18 170912" src="https://github.com/user-attachments/assets/34837ab8-cf13-46dc-8c14-9302cd369ca8" />
+
+Lo mas probable es que la demanda sea estacional, con una leve tendencia a la baja, por eso se eligió un ARIMA (1,0,0) (0,1,1) 12 con drift. El primer 1 es un componente autoregresivo ya que la demanda del pasado influye en el mes anterior(las temperaturas no cambian drasticamente). Se necesitó una diferenciación estacional para que el modelo tome en cuenta los valores del mismo mes pero del año anterior. Ademas tiene un componente de media movil que corrige segun los errores.
+
+
+
 Key Insights:
 - La correlación entre demanda-precio es del 59%.
 - La demanda tiene una disminución anual del 0,83% mientras que el precio decae un 4,29% anual.
