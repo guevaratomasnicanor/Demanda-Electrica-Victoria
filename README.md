@@ -50,6 +50,7 @@ Metrica Valor
                 ME       RMSE       MAE       MPE      MAPE      MASE       ACF1
 Training set 2.5031865 12.6696213 9.6220821 0.1931699 12.5553054 0.3845479 0.2667223
 Se ve una mejora sustancial respecto al ARIMA: Reducción del error promedio de 31 a 12%, RMSE y MAE menores, insesgadez del modelo pero con información en los residuos. 
+
 <img width="635" height="360" alt="Captura de pantalla 2025-12-18 195033" src="https://github.com/user-attachments/assets/e8890e78-11a7-4e4b-8a7f-8be5c6db88ce" />
 
 
