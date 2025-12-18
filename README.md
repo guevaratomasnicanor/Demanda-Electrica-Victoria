@@ -1,5 +1,5 @@
 # Demanda-Electrica-Victoria
-
+Este proyecto analiza el comportamiento de la demanda y el precio de la electricidad en Victoria (Australia) entre 2018 y 2023. El objetivo es  estas dos variables claves del sector energético para luego
 # Análisis de la demanda
 <img width="640" height="356" alt="Captura de pantalla 2025-12-16 161242" src="https://github.com/user-attachments/assets/600974fa-6e6f-4db3-9ae1-fa1885886364" />
 
