@@ -1,137 +1,148 @@
-⚡ Demanda y Precio de la Electricidad en Victoria (Australia)
+# ⚡ Demanda y Precio de la Electricidad en Victoria (Australia)
 
-Este proyecto analiza el comportamiento de la demanda y el precio de la electricidad en el estado de Victoria (Australia) durante el período 2018–2023.
-El objetivo es comprender la dinámica entre ambas variables clave del sector energético y evaluar distintos enfoques de modelado y pronóstico.
-# Análisis de la demanda
-<img width="640" height="356" alt="Captura de pantalla 2025-12-16 161242" src="https://github.com/user-attachments/assets/600974fa-6e6f-4db3-9ae1-fa1885886364" />
+Análisis de la evolución de la **demanda** y el **precio de la electricidad** en el estado de Victoria (Australia) durante el período **2018–2023**, con énfasis en estacionalidad, patrones horarios y modelos de pronóstico.
 
-Los picos máximos de demanda se observan durante el verano, principalmente asociados a temperaturas extremas y mayor uso de sistemas de refrigeración. 
+---
 
-<img width="636" height="360" alt="Captura de pantalla 2025-12-16 161332" src="https://github.com/user-attachments/assets/f8850339-9a6f-4677-a78d-cc31b31559cd" />
+## 🎯 Objetivo
 
-Sin embargo, al analizar la demanda promedio mensual, se observa que esta suele ser más elevada en invierno, reflejando un consumo más sostenido debido a calefacción y menor variabilidad climática diaria.
+- Analizar el comportamiento histórico de la demanda y el precio eléctrico.
+- Identificar patrones estacionales y horarios.
+- Evaluar la relación entre demanda y precio.
+- Comparar modelos econométricos tradicionales con modelos de *machine learning* para pronóstico.
 
-# Análisis del precio
+---
 
+## 📁 Dataset
 
-<img width="626" height="345" alt="Captura de pantalla 2025-12-16 155607" src="https://github.com/user-attachments/assets/8ed491ba-64a0-4533-a220-07cd639a6922" />
+- **Ubicación:** Victoria, Australia  
+- **Período:** 2018 – 2023  
+- **Frecuencia:** Horaria (agregada a nivel mensual para forecasting)
+- **Variables principales:**
+  - Demanda eléctrica
+  - Precio spot de la electricidad
 
-Los picos de precios se concentran tanto en verano como en invierno.
-Además, se observan precios negativos, típicos de días con alta generación renovable (solar y eólica) combinada con baja demanda..
+---
 
-<img width="631" height="359" alt="Captura de pantalla 2025-12-16 161344" src="https://github.com/user-attachments/assets/3c332600-a388-4d16-9c16-3f621674b38c" />
+## 📊 Análisis Exploratorio
 
-El precio promedio muestra una estabilidad relativa, interrumpida por algunos shocks significativos.
-El más relevante ocurre en el invierno de 2022, explicado por:
+### 🔌 Demanda Eléctrica
 
-El conflicto Rusia–Ucrania
+![Demanda anual](https://github.com/user-attachments/assets/600974fa-6e6f-4db3-9ae1-fa1885886364)
 
-Fallas estructurales en el sistema energético
+- Los **picos máximos de demanda** se concentran en **verano**, asociados a olas de calor y mayor uso de refrigeración.
 
-Un invierno particularmente frío
+![Demanda mensual promedio](https://github.com/user-attachments/assets/f8850339-9a6f-4677-a78d-cc31b31559cd)
 
-<img width="643" height="361" alt="Captura de pantalla 2025-12-17 152744" src="https://github.com/user-attachments/assets/bb27a168-12eb-49fa-8429-14b940ae1ca2" />
+- La **demanda promedio mensual** es más elevada en **invierno**, reflejando un consumo más estable y sostenido.
 
-Los picos horarios de precio suelen darse:
+---
 
-Por la mañana en invierno
+### 💰 Precio de la Electricidad
 
-Entre 16 y 19 horas en verano
+![Precio histórico](https://github.com/user-attachments/assets/8ed491ba-64a0-4533-a220-07cd639a6922)
 
+- Los **picos de precios** ocurren tanto en **verano** como en **invierno**.
+- Se observan **precios negativos**, típicos de escenarios con alta generación renovable y baja demanda.
 
-# Pronóstico de demanda y precio: 
-<img width="630" height="360" alt="Captura de pantalla 2025-12-18 170912" src="https://github.com/user-attachments/assets/34837ab8-cf13-46dc-8c14-9302cd369ca8" />
+![Precio promedio mensual](https://github.com/user-attachments/assets/3c332600-a388-4d16-9c16-3f621674b38c)
 
-📈 Pronóstico de Demanda (ARIMA)
+- El precio presenta una **estabilidad relativa**, interrumpida por shocks relevantes.
+- El evento más significativo ocurre en el **invierno de 2022**, explicado por:
+  - Conflicto Rusia–Ucrania
+  - Fallas estructurales del sistema energético
+  - Temperaturas inusualmente bajas
 
-Para modelar la demanda se utilizaron métodos tradicionales de econometría, en particular un:
+![Precio por hora](https://github.com/user-attachments/assets/bb27a168-12eb-49fa-8429-14b940ae1ca2)
 
-ARIMA (1,0,0)(0,1,1)[12] con drift
+- **Picos horarios de precio**:
+  - Mañana en invierno
+  - Entre 16 y 19 hs en verano
 
-Justificación del modelo:
+---
 
-Componente autoregresivo: la demanda pasada influye en la actual, dado que las temperaturas no cambian bruscamente.
+## 🔮 Modelos de Pronóstico
 
-Diferenciación estacional: permite capturar la similitud entre el mismo mes de distintos años.
+![Forecast](https://github.com/user-attachments/assets/34837ab8-cf13-46dc-8c14-9302cd369ca8)
 
-Componente de media móvil: corrige errores de predicción.
+### 📈 Pronóstico de Demanda — ARIMA
 
-Métricas del modelo (training set):
+Se utilizó un modelo:
 
-Métrica	Valor
-MAPE	1.99%
-RMSE	137.08
-MAE	96.23
-ACF1	-0.01
+**ARIMA (1,0,0)(0,1,1)[12] con drift**
 
-Conclusiones:
+**Justificación:**
+- Componente autoregresivo: la demanda pasada influye en la actual.
+- Diferenciación estacional: captura patrones anuales.
+- Media móvil: corrige errores de predicción.
 
-El modelo es robusto, con un error promedio cercano al 2%.
+**Métricas (training set):**
 
-RMSE y MAE similares indican ausencia de errores extremos.
+| Métrica | Valor |
+|------|------|
+| MAPE | 1.99% |
+| RMSE | 137.08 |
+| MAE | 96.23 |
+| ACF1 | -0.01 |
 
-No hay autocorrelación en los residuos.
+**Conclusiones:**
+- Modelo robusto y estable.
+- Error promedio cercano al 2%.
+- No se detecta autocorrelación en los residuos.
+- Leve sesgo de sobreestimación.
 
-Se detecta un leve sesgo de sobreestimación de la demanda.
+---
 
-Las métricas implican que el modelo es robusto, con una falla promedio del 2% en las predicciones de demanda. El RMSE no es drásticamente superior al MAE, lo que nos indica que no se estan cometiendo errores catastróficos en la predicción. El ACF es casi 0 lo que implica queno hay autocorrelación en los residuos. Existe un leve sesgo de sobreestimación de la demanda. 
+### 📉 Pronóstico de Precio — ARIMA
 
+Modelo evaluado:
 
-📉 Pronóstico de Precio
+**ARIMA (1,0,0)(0,0,1)[12]**
 
-El modelado del precio resultó más complejo debido a su alta volatilidad.
+| Métrica | Valor |
+|------|------|
+| MAPE | 31.35% |
+| RMSE | 40.35 |
+| MAE | 24.08 |
 
-ARIMA
+**Limitaciones:**
+- Alta volatilidad del precio.
+- Errores grandes ocasionales (RMSE >> MAE).
+- Tendencia a sobreestimar el precio.
 
-El mejor modelo ARIMA probado fue:
+---
 
-ARIMA (1,0,0)(0,0,1)[12]
+### 🚀 Pronóstico de Precio — XGBoost (Modelo Final)
 
-Métrica	Valor
-MAPE	31.35%
-RMSE	40.35
-MAE	24.08
+Debido al bajo desempeño de ARIMA, se implementó **XGBoost** con *feature engineering* avanzado:
 
-Problemas detectados:
+- Variables cíclicas (meses)
+- Lags de 1 y 12 meses
+- Variables exógenas (ratio precio–demanda)
+- Tendencias implícitas
 
-Error promedio elevado (~31%).
+**Métricas:**
 
-RMSE casi el doble del MAE, indicando errores grandes ocasionales.
+| Métrica | Valor |
+|------|------|
+| MAPE | 12.56% |
+| RMSE | 12.67 |
+| MAE | 9.62 |
+| MASE | 0.38 |
 
-Tendencia a sobreestimar los precios.
+![XGBoost Forecast](https://github.com/user-attachments/assets/e8890e78-11a7-4e4b-8a7f-8be5c6db88ce)
 
-Se probaron modelos alternativos (ETS, transformaciones logarítmicas), pero solo se obtuvieron mejoras marginales.
+**Resultados:**
+- Reducción del error promedio del 31% al 12%.
+- Modelo prácticamente insesgado.
+- Persistencia de estructura en los residuos (oportunidad de mejora futura).
 
-🚀 XGBoost (Modelo Final de Precio)
+---
 
-Finalmente, se implementó un modelo XGBoost con feature engineering avanzado, incluyendo:
+## 🔍 Key Insights
 
-Componentes cíclicos (ej. diciembre y enero como meses cercanos).
+- 📈 **Correlación demanda–precio:** 59%
+- 📉 **Demanda:** caída promedio anual del **0.83%**
+- 📉 **Precio:** caída promedio anual del **4.29%**
+- ⚡ El precio presenta mayor volatilidad que la demanda, justificando el uso de modelos no lineales
 
-Lags de 1 y 12 meses.
-
-Variables exógenas (ratio precio–demanda).
-
-Tendencias y estacionalidades implícitas.
-
-Métricas del modelo:
-
-Métrica	Valor
-MAPE	12.56%
-RMSE	12.67
-MAE	9.62
-MASE	0.38
-
-                ME       RMSE       MAE       MPE      MAPE      MASE       ACF1
-Training set 2.5031865 12.6696213 9.6220821 0.1931699 12.5553054 0.3845479 0.2667223
-Se ve una mejora sustancial respecto al ARIMA: Reducción del error promedio de 31 a 12%, RMSE y MAE menores, insesgadez del modelo pero con información en los residuos. 
-
-<img width="635" height="360" alt="Captura de pantalla 2025-12-18 195033" src="https://github.com/user-attachments/assets/e8890e78-11a7-4e4b-8a7f-8be5c6db88ce" />
-
-
-Key Insights:
-
-- La correlación entre demanda-precio es del 59%.
-- La demanda tiene una disminución anual del 0,83% mientras que el precio decae un 4,29% anual.
-
-  
