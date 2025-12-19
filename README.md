@@ -28,25 +28,21 @@ Análisis de la evolución de la **demanda** y el **precio de la electricidad** 
 
 ### 🔌 Demanda Eléctrica
 
-![Demanda anual](https://github.com/user-attachments/assets/600974fa-6e6f-4db3-9ae1-fa1885886364)
+<img width="1361" height="699" alt="Captura de pantalla 2025-12-19 104553" src="https://github.com/user-attachments/assets/21acfb02-993e-470e-9612-8a3f31c809ac" />
+
 
 - Los **picos máximos de demanda** se concentran en **verano**, asociados a olas de calor y mayor uso de refrigeración.
-
-![Demanda mensual promedio](https://github.com/user-attachments/assets/f8850339-9a6f-4677-a78d-cc31b31559cd)
-
 - La **demanda promedio mensual** es más elevada en **invierno**, reflejando un consumo más estable y sostenido.
 
 ---
 
 ### 💰 Precio de la Electricidad
 
-![Precio histórico](https://github.com/user-attachments/assets/8ed491ba-64a0-4533-a220-07cd639a6922)
+<img width="1361" height="698" alt="Captura de pantalla 2025-12-19 104944" src="https://github.com/user-attachments/assets/87f646bc-448c-496f-810b-a57eb2a7328d" />
+
 
 - Los **picos de precios** ocurren tanto en **verano** como en **invierno**.
 - Se observan **precios negativos**, típicos de escenarios con alta generación renovable y baja demanda.
-
-![Precio promedio mensual](https://github.com/user-attachments/assets/3c332600-a388-4d16-9c16-3f621674b38c)
-
 - El precio presenta una **estabilidad relativa**, interrumpida por shocks relevantes.
 - El evento más significativo ocurre en el **invierno de 2022**, explicado por:
   - Conflicto Rusia–Ucrania
