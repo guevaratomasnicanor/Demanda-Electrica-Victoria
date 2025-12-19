@@ -48,7 +48,15 @@ Análisis de la evolución de la **demanda** y el **precio de la electricidad** 
   - Conflicto Rusia–Ucrania
   - Fallas estructurales del sistema energético
   - Temperaturas inusualmente bajas
+ 
+  # Analisis de variabilidad y volatilidad:
+  Coeficiente de Variación - DEMANDA: 19.15 %
+  Coeficiente de Variación - PRECIO: 228.53 %
 
+ Porcentaje de eventos extremos segun MAD >3:
+ Demanda: 0.97 %
+ Precio: 5,15%
+  La demanda es estable, con poca variabilidad y escasos eventos extremos, mientras que el precio es más volatil.
 ![Precio por hora](https://github.com/user-attachments/assets/bb27a168-12eb-49fa-8429-14b940ae1ca2)
 
 - **Picos horarios de precio**:
@@ -140,5 +148,6 @@ Debido al bajo desempeño de ARIMA, se implementó **XGBoost** con *feature engi
 - 📈 **Correlación demanda–precio:** 59%
 - 📉 **Demanda:** caída promedio anual del **0.83%**
 - 📉 **Precio:** caída promedio anual del **4.29%**
-- ⚡ El precio presenta mayor volatilidad que la demanda, justificando el uso de modelos no lineales
+
+
 
